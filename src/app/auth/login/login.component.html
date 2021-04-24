@@ -1,0 +1,35 @@
+<div class="formCenter">
+  <main class="form-signin">
+    <form [formGroup]="myForm" (submit)="login()">
+      <h1 style="text-align: center">Technical challenge</h1>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input
+          formControlName="username"
+          required
+          type="text"
+          matInput
+          placeholder="Username"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+          formControlName="password"
+          required
+          type="password"
+          matInput
+          placeholder="Password"
+        />
+      </mat-form-field>
+      <div style="text-align: right; margin-bottom: 10px">
+        <a routerLink="/forgotpassword">Forgot password?</a>
+      </div>
+      <div style="text-align: center">
+        <button type="submit" mat-raised-button color="primary">Sign In</button>
+      </div>
+    </form>
+  </main>
+</div>

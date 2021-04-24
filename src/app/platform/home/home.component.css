@@ -1,0 +1,64 @@
+/* DESIGN HOME*/
+.home {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 70px;
+  overflow: auto;
+}
+
+.home .container__home {
+  width: 80%;
+  margin: auto;
+}
+
+.home .container__home .header_add {
+  width: 100%;
+  text-align: right;
+  margin-top: 15px;
+}
+
+.home .container__home .header_filter {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  width: 100%;
+  box-shadow: none;
+  border: 2px #e5e5e5 solid;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-grid-list {
+  padding: 14px;
+  border: 2px #e5e5e5 solid;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .home {
+    top: 55px;
+  }
+
+  .home .container__home {
+    width: 95%;
+  }
+
+  .mat-fab {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mat-fab .mat-button-wrapper {
+    padding: 0px !important;
+  }
+}

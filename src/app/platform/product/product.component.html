@@ -1,0 +1,151 @@
+<mat-toolbar>
+  <span>{{
+    myForm.controls["id"].value ? "Modify Product" : "New Product"
+  }}</span>
+  <span class="example-spacer"></span>
+
+  <button
+    mat-icon-button
+    class="example-icon btn-dialog-close"
+    (click)="onClose()"
+    tabIndex="-1"
+  >
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form
+  [formGroup]="myForm"
+  class="normal-form"
+  (submit)="onSubmit()"
+  class="normal-form"
+  style="margin-top: 30px"
+>
+  <mat-dialog-content class="mat-typography">
+    <div class="controles-container">
+      <input type="hidden" formControlName="id" />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Handle</mat-label>
+        <input
+          formControlName="handle"
+          required
+          type="text"
+          matInput
+          placeholder="Handle"
+          appearance="outline"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Title</mat-label>
+        <input
+          formControlName="title"
+          required
+          type="text"
+          matInput
+          placeholder="Title"
+          appearance="outline"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Sku</mat-label>
+        <input
+          formControlName="sku"
+          required
+          type="number"
+          matInput
+          placeholder="Sku"
+          appearance="outline"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Grams</mat-label>
+        <input
+          formControlName="grams"
+          required
+          type="number"
+          matInput
+          placeholder="Grams"
+          appearance="outline"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Stock</mat-label>
+        <input
+          formControlName="stock"
+          required
+          type="number"
+          matInput
+          placeholder="Stock"
+          appearance="outline"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Price</mat-label>
+        <input
+          formControlName="price"
+          required
+          type="number"
+          matInput
+          placeholder="Price"
+          appearance="outline"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Compare Price</mat-label>
+        <input
+          formControlName="compare_price"
+          required
+          type="number"
+          matInput
+          placeholder="Compare Price"
+          appearance="outline"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Barcode</mat-label>
+        <input
+          formControlName="barcode"
+          required
+          type="number"
+          matInput
+          placeholder="Barcode"
+          appearance="outline"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Description</mat-label>
+
+        <textarea
+          appearance="outline"
+          matInput
+          formControlName="description"
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="5"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button
+      mat-button
+      cdkFocusInitial
+      mat-raised-button
+      color="primary"
+      type="submit"
+    >
+      Submit
+    </button>
+  </mat-dialog-actions>
+</form>

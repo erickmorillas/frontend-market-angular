@@ -1,0 +1,92 @@
+<app-menu></app-menu>
+
+<div class="home">
+  <div class="container__home">
+    <div class="header_add" style="text-align: right">
+      <button mat-stroked-button (click)="onCreate()" color="primary">
+        Add <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <div class="header_filter">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input
+          matInput
+          autocomplete="off"
+          [(ngModel)]="searchKey"
+          (keyup)="applyFilter()"
+          placeholder="Search..."
+          #input
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="listData" matSort>
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> Num </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.id }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="sku">
+          <mat-header-cell *matHeaderCellDef> Sku </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.sku }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.title }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="handle">
+          <mat-header-cell *matHeaderCellDef> Handle </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.handle }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.price }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="onEdit(row)">
+              <mat-icon>launch</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="onDelete(row.id)">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="loading">
+          <mat-footer-cell *matFooterCellDef colspan="6">
+            Loading data...
+          </mat-footer-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">
+            No data matching the filter "{{ input.value }}"
+          </td>
+        </tr>
+      </mat-table>
+
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
+  </div>
+</div>

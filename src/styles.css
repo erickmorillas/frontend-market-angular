@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.colorDefault {
+  color: #673ab7;
+}
+
+.mat-toolbar {
+  background: white;
+  border: 2px #e5e5e5 solid;
+}
+
+.mat-header-row {
+  background: #ececec;
+}
+
+@media only screen and (max-width: 600px) {
+  .mat-fab .mat-button-wrapper {
+    padding: 0px !important;
+  }
+
+  .mat-grid-list {
+    height: 32px;
+  }
+
+  .mat-grid-tile {
+    height: 36px;
+  }
+
+  .cdk-overlay-pane {
+    width: 80% !important;
+  }
+}
