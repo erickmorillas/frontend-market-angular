@@ -41,8 +41,6 @@ export class ProductComponent implements OnInit {
     }
   }
 
-
-
   onClose() {
     this.dialogRef.close();
   }

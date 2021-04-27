@@ -22,9 +22,6 @@ export class ChangepasswordComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
-
-    console.log(this.rutaActiva.snapshot.params.id);
-
   }
 
   initForm() {

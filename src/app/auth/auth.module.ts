@@ -8,14 +8,16 @@ import { AuthRoutingModule } from "./auth.routing.module"
 import { LoginComponent } from "./login/login.component"
 import { ForgotpasswordComponent } from "./forgotpassword/forgotpassword.component"
 import { ChangepasswordComponent } from "./changepassword/changepassword.component"
+import { RegisterComponent } from "./register/register.component"
 
 import { AuthService } from "../services/auth.service";
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [LoginComponent, ForgotpasswordComponent, ChangepasswordComponent],
+  declarations: [LoginComponent, ForgotpasswordComponent, ChangepasswordComponent, RegisterComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -23,7 +25,8 @@ import { MatInputModule } from '@angular/material/input';
     AuthRoutingModule,
     HttpClientModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule
   ],
   providers: [
     AuthService

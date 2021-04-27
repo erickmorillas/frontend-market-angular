@@ -8,13 +8,10 @@ import { environment } from '../../environments/environment';
 
 import { TokenService } from './token.service';
 
-import { ProductsService } from "./product.service"
-
 @Injectable()
 
 export class AuthService {
   constructor(
-    private service: ProductsService,
     private httpClient: HttpClient,
     private token: TokenService) {
   }
@@ -24,12 +21,11 @@ export class AuthService {
     return this.httpClient.post<JwtResponseI>(`${environment.baseUrl}auth/login`, user).pipe(tap(
       (res: JwtResponseI) => {
         if (res) {
-          //this.saveToken(res.body.data, res.body.token);
           this.token.saveToken(res.body.data, res.body.token);
-          this.service.getAllProducts()
         }
       }, (err => {
-        alert(`${err.statusText} incorrect username or password`)
+        console.log(err);
+        alert(`Incorrect username or password`)
       })
     ))
   }
@@ -44,6 +40,17 @@ export class AuthService {
       password: password
     });
   }
+
+  register(data: any) {
+    return this.httpClient.post(`${environment.baseUrl}auth/register`, {
+      firstName: data.firstname,
+      lastName: data.lastname,
+      email: data.email,
+      username: data.username,
+      password: data.password1,
+    });
+  }
+
 
   logout() {
     return this.token.removeToken();

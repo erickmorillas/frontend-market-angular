@@ -23,8 +23,8 @@ export class MenuComponent implements OnInit {
 
   logout(): void {
     this.user.removeToken();
-
     this.router.navigateByUrl('/')
+
   }
 
 }

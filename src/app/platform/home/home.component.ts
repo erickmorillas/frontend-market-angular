@@ -20,7 +20,7 @@ import { ProductComponent } from "../product/product.component";
 
 export class HomeComponent implements OnInit {
 
-    displayedColumns: string[] = ['id', 'sku', 'title', 'handle', 'price', 'actions'];
+    displayedColumns: string[] = ['sku', 'title', 'handle', 'price', 'actions'];
     listData: [Product] | any;
     searchKey: string | any;
 

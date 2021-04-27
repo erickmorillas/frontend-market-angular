@@ -18,8 +18,8 @@ export class ProductsService {
     constructor(
         private http: HttpClient
     ) {
-        this.getAllProducts()
         this.products$ = new Subject<Product>();
+        this.getAllProducts()
     }
 
     form: FormGroup = new FormGroup({
@@ -50,10 +50,6 @@ export class ProductsService {
         });
     }
 
-    getAllProducts01(): Observable<Product[]> {
-        return this.http.get<Product[]>(`${environment.baseUrl}product`)
-    }
-
     getAllProducts() {
         this.http.get<Product[]>(`${environment.baseUrl}product`).subscribe((data: any) => {
             this.product = data.body;
@@ -62,6 +58,7 @@ export class ProductsService {
     }
 
     getAllProducts$(): Observable<Product[]> {
+        this.getAllProducts();
         return this.products$.asObservable();
     }
 

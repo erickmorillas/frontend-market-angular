@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   /*
-  padding-top: 40px;
-  padding-bottom: 40px;
-  */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    */
   height: 100%;
 
   background: rgb(255, 255, 255);
@@ -28,4 +28,8 @@
 h1 {
   color: #673ab7;
   font-weight: 500;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0px !important;
 }
